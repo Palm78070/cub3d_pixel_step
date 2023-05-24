@@ -1,1 +1,1 @@
-# cub3d_pixel_step
+# cub3d
