@@ -90,7 +90,7 @@ void draw_minimap(int x, int y)
  create_boarder();
  flood_tire();
  raycast2();
- printf("imgW: %i imgH: %i\n", mstr.mnMp.imgW, mstr.mnMp.imgH);
+ // printf("imgW: %i imgH: %i\n", mstr.mnMp.imgW, mstr.mnMp.imgH);
  mlx_put_image_to_window(&mstr, mstr.mlx.win, mstr.mlx.img_ptr, 0, 0);
  mlx_put_image_to_window(&mstr, mstr.mlx.win, mstr.mnMp.img, mstr.ray.img_pos.ix, mstr.ray.img_pos.iy);
 }

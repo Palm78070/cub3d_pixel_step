@@ -26,6 +26,8 @@ SRCS = cub3d.c \
 		initmstr.c \
 		stormapinfo.c \
 		walk.c \
+		crossTire.c \
+		hitWall.c \
 		hook.c \
 		draw.c \
 		draw_tire.c \

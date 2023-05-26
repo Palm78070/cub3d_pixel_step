@@ -29,7 +29,7 @@
 #define MnMp_H 200
 #define tireSz 20
 #define FOV 0.66
-#define STEP 2
+#define STEP 5
 
 typedef struct s_mapinfo
 {
@@ -158,6 +158,10 @@ void ft_walkUp(void);
 void ft_walkDown(void);
 void ft_walkLeft(void);
 void ft_walkRight(void);
+// crossTire
+int crossTire(char c);
+// hitWall
+int hitWall(char c);
 // draw
 void ft_pixel_put(int x, int y, int color);
 int dn(int n0, int n1);

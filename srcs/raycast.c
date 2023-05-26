@@ -130,12 +130,12 @@ void raycast(float tireX, float tireY)
     drawRay();
   if (hitWall)
   {
-    printf("hit wall map[%i][%i] ", (int)tireY, (int)tireX);
+    // printf("hit wall map[%i][%i] ", (int)tireY, (int)tireX);
     if (mstr.ray.isX)
       mstr.ray.ppwd = (mstr.ray.sideDst.x - mstr.ray.deltaDst.x);
     else
       mstr.ray.ppwd = (mstr.ray.sideDst.y - mstr.ray.deltaDst.y);
-    printf("ray%i:ppwd is %f\n", mstr.ray.rayN, mstr.ray.ppwd);
+    // printf("ray%i:ppwd is %f\n", mstr.ray.rayN, mstr.ray.ppwd);
   }
 }
 
@@ -164,11 +164,12 @@ void raycast2(void)
   mstr.ray.rayN = -1;
   mstr.rot.rad = 0;
 
-  printf("rad %f\n", mstr.rot.rad);
-  printf("player posX: %f posY: %f\n", mstr.ray.pos.x, mstr.ray.pos.y);
-  printf("ceilX: %i ceilY: %i\n", mstr.tire.ceil.ix, mstr.tire.ceil.iy);
-  printf("floorX: %i floorY: %i\n", mstr.tire.floor.ix, mstr.tire.floor.iy);
-  printf("PercentX: %f PercentY: %f\n", mstr.ray.pcnt.x, mstr.ray.pcnt.y);
-  printf("player current tire (x:%i, y:%i)\n", mstr.ray.tire.ix, mstr.ray.tire.iy);
-  printf("map[%i][%i] is %i\n", mstr.ray.tire.iy, mstr.ray.tire.ix, mstr.map.map[mstr.ray.tire.iy][mstr.ray.tire.ix]);
+  // printf("rad %f\n", mstr.rot.rad);
+  // printf("player posX: %f posY: %f\n", mstr.ray.pos.x, mstr.ray.pos.y);
+  // printf("ceilX: %i ceilY: %i\n", mstr.tire.ceil.ix, mstr.tire.ceil.iy);
+  // printf("floorX: %i floorY: %i\n", mstr.tire.floor.ix, mstr.tire.floor.iy);
+  // printf("PercentX: %f PercentY: %f\n", mstr.ray.pcnt.x, mstr.ray.pcnt.y);
+  // printf("player current tire (x:%i, y:%i)\n", mstr.ray.tire.ix, mstr.ray.tire.iy);
+  // printf("map[%i][%i] is %i\n", mstr.ray.tire.iy, mstr.ray.tire.ix, mstr.map.map[mstr.ray.tire.iy][mstr.ray.tire.ix]);
+  printf("dirX: %f dirY: %f\n", mstr.ray.dir.x, mstr.ray.dir.y);
 }
