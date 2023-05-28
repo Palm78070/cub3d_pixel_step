@@ -10,12 +10,24 @@ void ft_walkUp(void)
  //  mstr.tire.floor.iy -= tireSz;
  // }
  // if (mstr.map.map[mstr.ray.tire.iy - 1][mstr.ray.tire.ix] == '1' && mstr.ray.pos.y <= mstr.tire.floor.iy)
- if (hitWall('N'))
+ if (mstr.ray.dir.y > 0 && hitWall('S'))
+ {
+  printf("Hit Wall on Down!!!!\n");
+  return;
+ }
+ else if (hitWall('N'))
  {
   printf("Hit Wall on Up!!!!\n");
   return;
  }
- if (!crossTire('N'))
+ if (mstr.ray.dir.y > 0 && crossTire('S'))
+ {
+  printf("!!!!player is face down!!!!\n");
+ }
+ else if (crossTire('N'))
+ {
+ }
+ else
  {
   printf("In stepUp\n");
   // mstr.tire.floor.iy += STEP;
@@ -25,8 +37,8 @@ void ft_walkUp(void)
   // if (mstr.ray.dir.y > 0)
   //  if (mstr.ray.dir.y + 0.01 >= 1)
   //   mstr.ray.dir.y = 1;
-  if (mstr.ray.dir.x > 0 && mstr.ray.dir.x < 0.1)
-   mstr.ray.dir.x = 0;
+  // if (mstr.ray.dir.x > 0 && mstr.ray.dir.x < 0.1)
+  //  mstr.ray.dir.x = 0;
   mstr.tire.floor.iy -= (STEP * mstr.ray.dir.y);
   mstr.tire.floor.ix -= (STEP * mstr.ray.dir.x);
   mstr.tire.ceil.iy -= (STEP * mstr.ray.dir.y);
@@ -116,6 +128,7 @@ void ft_walkLeft(void)
 void ft_walkRight(void)
 {
  // if ((mstr.map.map[mstr.ray.tire.iy][mstr.ray.tire.ix + 1] == '1' && mstr.ray.pos.x >= mstr.tire.ceil.ix))
+ printf("Walk right\n");
  if (hitWall('E'))
  {
   printf("Hit Wall on Right!!!!\n");

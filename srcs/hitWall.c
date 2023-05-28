@@ -56,3 +56,8 @@ int hitWall(char c)
  }
  return (0);
 }
+
+// int hitWall2(void)
+// {
+//  if (mstr.ray.dir.y < 0 && hitWallUp())
+// }
