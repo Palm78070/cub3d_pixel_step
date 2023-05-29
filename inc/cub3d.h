@@ -153,13 +153,18 @@ void mlx_setup();
 int handle_key(int key_code);
 int handle_cross(void);
 int handle_walk(int key_code);
+// handle_float
+float lmtDir(float n);
+float ft_roundf2(float n);
 // walk
+void walkUp(int x, int y);
 void ft_walkUp(void);
 void ft_walkDown(void);
 void ft_walkLeft(void);
 void ft_walkRight(void);
 // crossTire
-int crossTire(char c);
+// int crossTire(char c);
+int crossTire(int x, int y);
 // hitWall
 int hitWall(char c);
 // draw

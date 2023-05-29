@@ -25,6 +25,7 @@ SRCS = cub3d.c \
 		storfile2tlist.c \
 		initmstr.c \
 		stormapinfo.c \
+		handle_float.c \
 		walk.c \
 		crossTire.c \
 		hitWall.c \

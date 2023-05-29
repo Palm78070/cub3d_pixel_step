@@ -8,14 +8,20 @@ t_vec rotate(t_vec v)
   old_x = v.x;
   v.x = (v.x * cosf(mstr.rot.rad)) - (v.y * sinf(mstr.rot.rad));
   v.y = ((old_x * sinf(mstr.rot.rad)) + (v.y * cosf(mstr.rot.rad)));
-  if (v.y > 1)
-    v.y = 1;
-  if (v.y < -1)
-    v.y = -1;
-  if (v.x > 1)
-    v.x = 1;
-  if (v.x < -1)
-    v.x = -1;
+  // if (v.y > 1)
+  //   v.y = 1;
+  // if (v.y < -1)
+  //   v.y = -1;
+  // if (v.x > 1)
+  //   v.x = 1;
+  // if (v.x < -1)
+  //   v.x = -1;
+  v.y = lmtDir(v.y);
+  v.x = lmtDir(v.x);
+  // v.x = roundf(v.x * 10) / 10;
+  // v.y = roundf(v.y * 10) / 10;
+  v.x = ft_roundf2(v.x);
+  v.y = ft_roundf2(v.y);
   // printf("After Rotate v.x: %f v.y: %f\n", v.x, v.y);
   return (v);
 }
