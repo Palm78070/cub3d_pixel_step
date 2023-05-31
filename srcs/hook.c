@@ -11,17 +11,11 @@ int handle_key(int key_code)
     else if (key_code == 13)
         walkUp(mstr.ray.tire.ix, mstr.ray.tire.iy);
     else if (key_code == 0)
-    {
-        // ft_walkLeft(); // left
-    }
+        walkLeft(mstr.ray.tire.ix, mstr.ray.tire.iy);
     else if (key_code == 2)
-    {
-        // ft_walkRight(); // right
-    }
+        walkRight(mstr.ray.tire.ix, mstr.ray.tire.iy);
     else if (key_code == 1)
-    {
-        // ft_walkDown(); // down
-    }
+        walkDown(mstr.ray.tire.ix, mstr.ray.tire.iy);
     else if (key_code == 123)
     {
         printf("rotate left\n");

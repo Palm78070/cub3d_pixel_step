@@ -44,20 +44,21 @@ void create_boarder(void)
  t_point start;
  t_point end;
 
- start = (t_point){.ix = mstr.mnMp.floor.ix, .iy = mstr.mnMp.floor.iy};
- end = (t_point){.ix = mstr.mnMp.ceil.ix, .iy = mstr.mnMp.ceil.iy};
- lineT(start, (t_point){.ix = end.ix, .iy = start.iy});
- lineT(start, (t_point){.ix = start.ix, .iy = end.iy});
- mstr.ray.pos = (t_vec){.x = start.ix + (MnMp_W / 2), .y = start.iy + (MnMp_H / 2)};
+ start = (t_point){.x = mstr.mnMp.floor.ix, .y = mstr.mnMp.floor.iy};
+ end = (t_point){.x = mstr.mnMp.ceil.ix, .y = mstr.mnMp.ceil.iy};
+ lineT(start, (t_point){.x = end.x, .y = start.y});
+ lineT(start, (t_point){.x = start.x, .y = end.y});
+ mstr.ray.pos = (t_vec){.x = start.x + (MnMp_W / 2), .y = start.y + (MnMp_H / 2)};
  mstr.ray.img_pos = (t_point){.ix = mstr.ray.pos.x - (mstr.mnMp.imgW / 2),
 																														.iy = mstr.ray.pos.y - (mstr.mnMp.imgH / 2)};
- if (mstr.mnMp.start.ix < 0 && mstr.mnMp.start.ix < 0)
+ if (mstr.mnMp.start.x < 0 && mstr.mnMp.start.x < 0)
  {
-		mstr.mnMp.start = (t_point){.ix = mstr.ray.pos.x - (tireSz / 2),
-																														.iy = mstr.ray.pos.y - (tireSz / 2)};
-		mstr.tire.floor = (t_point){.ix = mstr.mnMp.start.ix, .iy = mstr.mnMp.start.iy};
-		mstr.tire.ceil = (t_point){.ix = mstr.ray.pos.x + (tireSz / 2),
-																													.iy = mstr.ray.pos.y + (tireSz / 2)};
+		mstr.mnMp.start = (t_point){.x = mstr.ray.pos.x - (tireSz / 2),
+																														.y = mstr.ray.pos.y - (tireSz / 2)};
+		printf("startX: %f startY: %f\n", mstr.mnMp.start.x, mstr.mnMp.start.y);
+		mstr.tire.floor = (t_point){.x = mstr.mnMp.start.x, .y = mstr.mnMp.start.y};
+		mstr.tire.ceil = (t_point){.x = mstr.ray.pos.x + (tireSz / 2),
+																													.y = mstr.ray.pos.y + (tireSz / 2)};
  }
 }
 

@@ -45,7 +45,7 @@ void fill_zone(int tireX, int tireY, t_point start)
   char **map;
 
   map = mstr.map.tmp;
-  if (!input_ok(tireX, tireY) || start.ix < 0 || start.iy < 0 || map[tireY][tireX] == '2')
+  if (!input_ok(tireX, tireY) || start.x < 0 || start.y < 0 || map[tireY][tireX] == '2')
     return;
   if (map[tireY][tireX] == '1')
     draw_wall(start);
@@ -53,16 +53,16 @@ void fill_zone(int tireX, int tireY, t_point start)
   draw_tire(start, tireX, tireY);
   // left
   if (input_ok(tireX - 1, tireY) && map[tireY][tireX - 1] != '2')
-    fill_zone(tireX - 1, tireY, (t_point){.ix = start.ix - tireSz, .iy = start.iy});
+    fill_zone(tireX - 1, tireY, (t_point){.x = start.x - tireSz, .y = start.y});
   // right
   if (input_ok(tireX + 1, tireY) && map[tireY][tireX + 1] != '2')
-    fill_zone(tireX + 1, tireY, (t_point){.ix = start.ix + tireSz, .iy = start.iy});
+    fill_zone(tireX + 1, tireY, (t_point){.x = start.x + tireSz, .y = start.y});
   // top
   if (input_ok(tireX, tireY - 1) && map[tireY - 1][tireX] != '2')
-    fill_zone(tireX, tireY - 1, (t_point){.ix = start.ix, .iy = start.iy - tireSz});
+    fill_zone(tireX, tireY - 1, (t_point){.x = start.x, .y = start.y - tireSz});
   // down
   if (input_ok(tireX, tireY + 1) && map[tireY + 1][tireX] != '2')
-    fill_zone(tireX, tireY + 1, (t_point){.ix = start.ix, .iy = start.iy + tireSz});
+    fill_zone(tireX, tireY + 1, (t_point){.x = start.x, .y = start.y + tireSz});
 }
 
 void flood_tire(void)

@@ -32,9 +32,9 @@ int initmstr(t_cub3d *mstr)
  mstr->ray.dir = (t_vec){.x = 0, .y = -1};
  mstr->ray.plane = (t_vec){.x = 0.66, .y = 0}; // FOV is 2*atan(0.66/1.0) = 66
  mstr->ray.lmt = (t_point){.x = INFINITY, .y = INFINITY};
- mstr->mnMp.start = (t_point){.ix = -1, .iy = -1};
- mstr->tire.floor = (t_point){.ix = -1, .iy = -1};
- mstr->tire.ceil = (t_point){.ix = -1, .iy = -1};
+ mstr->mnMp.start = (t_point){.x = -1, .y = -1};
+ mstr->tire.floor = (t_point){.x = -1, .y = -1};
+ mstr->tire.ceil = (t_point){.x = -1, .y = -1};
  mstr->rot.rad = 0;
  return (0);
 }

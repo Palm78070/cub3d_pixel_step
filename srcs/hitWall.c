@@ -2,22 +2,22 @@
 
 int hitWallUp(void)
 {
- return (mstr.map.map[mstr.ray.tire.iy - 1][mstr.ray.tire.ix] == '1' && mstr.ray.pos.y <= mstr.tire.floor.iy);
+ return (mstr.map.map[mstr.ray.tire.iy - 1][mstr.ray.tire.ix] == '1' && mstr.ray.pos.y <= mstr.tire.floor.y);
 }
 
 int hitWallDown(void)
 {
- return (mstr.map.map[mstr.ray.tire.iy + 1][mstr.ray.tire.ix] == '1' && mstr.ray.pos.y >= mstr.tire.ceil.iy);
+ return (mstr.map.map[mstr.ray.tire.iy + 1][mstr.ray.tire.ix] == '1' && mstr.ray.pos.y >= mstr.tire.ceil.y);
 }
 
 int hitWallLeft(void)
 {
- return (mstr.map.map[mstr.ray.tire.iy][mstr.ray.tire.ix - 1] == '1' && mstr.ray.pos.x <= mstr.tire.floor.ix);
+ return (mstr.map.map[mstr.ray.tire.iy][mstr.ray.tire.ix - 1] == '1' && mstr.ray.pos.x <= mstr.tire.floor.x);
 }
 
 int hitWallRight(void)
 {
- return (mstr.map.map[mstr.ray.tire.iy][mstr.ray.tire.ix + 1] == '1' && mstr.ray.pos.x >= mstr.tire.ceil.ix);
+ return (mstr.map.map[mstr.ray.tire.iy][mstr.ray.tire.ix + 1] == '1' && mstr.ray.pos.x >= mstr.tire.ceil.x);
 }
 
 int hitWall(char c)
