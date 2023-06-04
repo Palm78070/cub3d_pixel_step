@@ -2,7 +2,6 @@
 
 t_vec rotate(t_vec v)
 {
-  // printf("Before Rotate v.x: %f v.y: %f\n", v.x, v.y);
   float old_x;
 
   old_x = v.x;
@@ -68,8 +67,6 @@ void raycast(float tireX, float tireY)
   posY = (mstr.ray.tire.iy + mstr.ray.pcnt.y);
   mstr.ray.deltaDst.x = fabs(1 / mstr.ray.rayDir.x);
   mstr.ray.deltaDst.y = fabs(1 / mstr.ray.rayDir.y);
-  // printf("deltaDstX %f\n", mstr.ray.deltaDstX);
-  // printf("deltaDstY %f\n", mstr.ray.deltaDstY);
   if (mstr.ray.rayDir.x < 0)
   {
     // printf("zzz1\n");
@@ -146,10 +143,17 @@ void raycast(float tireX, float tireY)
   {
     // printf("hit wall map[%i][%i] ", (int)tireY, (int)tireX);
     if (mstr.ray.isX)
+    {
       mstr.ray.ppwd = (mstr.ray.sideDst.x - mstr.ray.deltaDst.x);
+      mstr.ray.wallHit = (float)mstr.ray.pos.y + (float)mstr.ray.ppwd * (float)mstr.ray.rayDir.y;
+    }
     else
+    {
       mstr.ray.ppwd = (mstr.ray.sideDst.y - mstr.ray.deltaDst.y);
-    // printf("ray%i:ppwd is %f\n", mstr.ray.rayN, mstr.ray.ppwd);
+      mstr.ray.wallHit = (float)mstr.ray.pos.x + (float)mstr.ray.ppwd * (float)mstr.ray.rayDir.x;
+    }
+    mstr.ray.wallHit -= floor(mstr.ray.wallHit);
+    getTextPoint();
   }
 }
 

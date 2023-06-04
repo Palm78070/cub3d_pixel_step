@@ -28,6 +28,7 @@
 #define MnMp_W 200
 #define MnMp_H 200
 #define tireSz 20
+#define texSz 200
 #define FOV 0.66
 #define STEP 5
 
@@ -91,6 +92,7 @@ typedef struct s_ray
     t_point step;
     t_point lmt;
     t_point pcnt;
+    t_point tex;
     t_vec pos;
     t_vec dir;
     t_vec plane;
@@ -101,6 +103,7 @@ typedef struct s_ray
     int isX;
     float camX;
     float ppwd;
+    float wallHit;
 } t_ray;
 
 typedef struct s_rotate
@@ -186,6 +189,8 @@ void lineT(t_point p0, t_point p1);
 //  raycasting
 void raycast(float tireX, float tireY);
 void raycast2(void);
+// texture.c
+void getTextPoint(void);
 // clear
 void ft_clear(void);
 void ft_error(char *s);

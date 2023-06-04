@@ -35,6 +35,7 @@ SRCS = cub3d.c \
 		minimap_utils.c \
 		minimap.c \
 		raycast.c \
+		texture.c \
 		clear.c \
 
 OBJS_DIR = objs/
