@@ -74,6 +74,7 @@ typedef struct s_minimap
     t_point floor;
     t_point ceil;
     t_point start;
+    t_point tmpPos;
 } t_minimap;
 
 typedef struct s_vec
